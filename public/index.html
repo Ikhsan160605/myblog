@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsitektur Teknologi</title>
+    <style>
+        body,
+        html {
+            scrollbar-width: none;
+        }
+
+        .hover_box {
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .hover_box:hover {
+            box-shadow: 0px 5px 10px 10px rgba(0, 9, 61, 0.2);
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="bg-white">
+        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+            <div>
+                <img class="w-16 cursor-pointer" src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png"
+                    alt="...">
+            </div>
+            <div
+                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Products</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Solution</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Resource</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Developers</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center gap-6">
+                <button id="toggleFormBtn"
+                    class="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Pesan untuk admin</button>
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+    </header>
+    <div class="absolute flex items-center justify-center top-[20%] md:left-[30%] right-[30%]">
+        <div class=" md:w-[30rem] bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="px-6 py-4" id="form" style="display: none;">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-2">Pesan KRITSAR</h2>
+                <form name="submit-to-google-sheet" id="messageForm" class="space-y-4" action="/submit" method="POST">
+                    <label for="name" class="block text-gray-700">Name:</label>
+                    <input name="name" id="name" type="text" placeholder="Masukan Nama" required
+                        class="form-input mt-1 block w-full">
+                    <label for="pesan" class="block text-gray-700">Pesan:</label>
+                    <textarea name="pesan" id="pesan" rows="4" placeholder="Pesan" required
+                        class="form-textarea mt-1 block w-full"></textarea>
+                    <button type="submit"
+                        class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="container mx-auto py-12 p-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover_box">
+                <img src="https://via.placeholder.com/800x400" alt="Blog Post" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">Title of Blog Post</h2>
+                    <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                        velit explicabo voluptatem repudiandae, facilis neque ducimus maxime placeat. Minima ipsum
+                        accusamus repellat unde consequuntur eligendi tempore, mollitia omnis numquam nisi.</p>
+                    <a href="#" class="text-blue-500 mt-4 inline-block">Read more</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover_box">
+                <img src="https://via.placeholder.com/800x400" alt="Blog Post" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">Title of Blog Post</h2>
+                    <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                        velit explicabo voluptatem repudiandae, facilis neque ducimus maxime placeat. Minima ipsum
+                        accusamus repellat unde consequuntur eligendi tempore, mollitia omnis numquam nisi.</p>
+                    <a href="#" class="text-blue-500 mt-4 inline-block">Read more</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="bg-white rounded-lg overflow-hidden hover_box">
+                <img src="https://via.placeholder.com/800x400" alt="Blog Post" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">Title of Blog Post</h2>
+                    <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                        velit explicabo voluptatem repudiandae, facilis neque ducimus maxime placeat. Minima ipsum
+                        accusamus repellat unde consequuntur eligendi tempore, mollitia omnis numquam nisi.</p>
+                    <a href="#" class="text-blue-500 mt-4 inline-block">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
