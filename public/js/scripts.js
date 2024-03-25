@@ -30,37 +30,57 @@ document.getElementById('toggleFormBtn').addEventListener('click', function () {
   }
 });
 
-document.getElementById('messageForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Menghentikan pengiriman form
+document.getElementById('messageForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
+  
+  const formData = new FormData(this);
+  const jsonData = {};
+  formData.forEach((value, key) => {
+      jsonData[key] = value;
+  });
 
-  // Mengambil nilai input nama dan pesan
-  const name = document.getElementById('name').value.trim();
-  const message = document.getElementById('pesan').value.trim();
+  const responseData = await fetch('/saveData', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonData)
+  }).then(response => response.json());
+  
+  console.log(responseData);
 
-  // Membuat objek pesan
-  const newMessage = {
-    name: name,
-    message: message
-  };
-  let existingMessages = localStorage.getItem('chatMessages');
-  existingMessages = existingMessages ? JSON.parse(existingMessages) : [];
-  fetch('db/chat.json', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(newMessage) // Mengubah objek menjadi JSON
-  })
-    .then(response => {
-      if (response.ok) {
-        console.log('Form data has been successfully saved.');
-        // Clear the form after successful submission if needed
-        messageForm.reset();
-      } else {
-        throw new Error('Failed to save form data. Server returned ' + response.status);
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+  // Tambahkan kode untuk menampilkan popup sukses
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
+  popup.textContent = 'Data berhasil terkirim!';
+  document.body.appendChild(popup);
+
+  // Setelah 3 detik, hilangkan popup dan sembunyikan form
+  setTimeout(() => {
+    popup.remove();
+    document.getElementById('hilang').style.display = 'none';
+  }, 3000);
 });
+
+
+// Mendapatkan data dari database.json
+let httpDatabase = new XMLHttpRequest();
+let databaseFilePath = 'database.json'; // Jalur relatif ke database.json dari scripts.js
+
+httpDatabase.open('GET', databaseFilePath, true);
+httpDatabase.send();
+
+httpDatabase.onload = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        let database = JSON.parse(this.responseText);
+
+        let output = "";
+        for (let key in database) {
+            if (database.hasOwnProperty(key)) {
+                let item = database[key];
+                output += `<div class="database"> <p class="name">Name : ${item.name}</p><p class="pesan">Pesan : ${item.pesan}</p></div>`;
+            }
+        }
+        document.getElementById('adminDatas').innerHTML = output;
+    }
+};

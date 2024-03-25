@@ -12,12 +12,31 @@
         }
 
         .hover_box {
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.2);
             transition: box-shadow 0.3s ease;
         }
 
         .hover_box:hover {
-            box-shadow: 0px 5px 10px 10px rgba(0, 9, 61, 0.2);
+            box-shadow: 0px 5px 10px 10px rgba(0, 36, 241, 0.2);
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .bgs {
+            background: rgba(255, 115, 0, 0.5);
+        }
+        .kritsar{
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
     </style>
     <link rel="stylesheet" href="css/style.css">
@@ -30,39 +49,28 @@
 
 <body>
     <!-- Navigation -->
-    <header class="bg-white">
+    <header class="bgs p-3 kritsar">
         <nav class="flex justify-between items-center w-[92%]  mx-auto">
             <div>
-                <img class="w-16 cursor-pointer" src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png"
-                    alt="...">
+                <h1 class=" font-extrabold">K-Blogs</h1>
             </div>
             <div
-                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+                class="nav-links duration-500 md:static absolute bg-white rounded-lg md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
                 <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
                     <li>
-                        <a class="hover:text-gray-500" href="#">Products</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-gray-500" href="#">Solution</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-gray-500" href="#">Resource</a>
-                    </li>
-                    <li>
                         <a class="hover:text-gray-500" href="#">Developers</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-gray-500" href="#">Pricing</a>
                     </li>
                 </ul>
             </div>
             <div class="flex items-center gap-6">
                 <button id="toggleFormBtn"
-                    class="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Pesan untuk admin</button>
+                    class="bg-[#965326] text-white px-5 py-2 rounded-full hover:bg-[#ff0000]">Pesan untuk admin</button>
                 <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
             </div>
     </header>
-    <div class="absolute flex items-center justify-center top-[20%] md:left-[30%] right-[30%]">
+
+
+    <div class="absolute flex items-center justify-center top-[20%] md:left-[30%] right-[30%]" id="hilang">
         <div class=" md:w-[30rem] bg-white shadow-md rounded-lg overflow-hidden">
             <div class="px-6 py-4" id="form" style="display: none;">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-2">Pesan KRITSAR</h2>
@@ -80,47 +88,36 @@
         </div>
     </div>
     <!-- Main Content -->
-    <div class="container mx-auto py-12 p-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="container mx-auto py-12 p-10 w-full">
+        <div class=" justify-center items-center grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Blog Post 1 -->
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover_box">
-                <img src="https://via.placeholder.com/800x400" alt="Blog Post" class="w-full h-64 object-cover">
+                <img src="https://indobotproject.com/wp-content/uploads/2021/10/1-1536x864.png" alt="Blog Post" class="w-full h-64 object-cover">
                 <div class="p-6">
-                    <h2 class="text-xl font-semibold text-gray-800">Title of Blog Post</h2>
-                    <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                        velit explicabo voluptatem repudiandae, facilis neque ducimus maxime placeat. Minima ipsum
-                        accusamus repellat unde consequuntur eligendi tempore, mollitia omnis numquam nisi.</p>
-                    <a href="#" class="text-blue-500 mt-4 inline-block">Read more</a>
-                </div>
-            </div>
-
-            <!-- Blog Post 2 -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover_box">
-                <img src="https://via.placeholder.com/800x400" alt="Blog Post" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold text-gray-800">Title of Blog Post</h2>
-                    <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                        velit explicabo voluptatem repudiandae, facilis neque ducimus maxime placeat. Minima ipsum
-                        accusamus repellat unde consequuntur eligendi tempore, mollitia omnis numquam nisi.</p>
-                    <a href="#" class="text-blue-500 mt-4 inline-block">Read more</a>
-                </div>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class="bg-white rounded-lg overflow-hidden hover_box">
-                <img src="https://via.placeholder.com/800x400" alt="Blog Post" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h2 class="text-xl font-semibold text-gray-800">Title of Blog Post</h2>
-                    <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                        velit explicabo voluptatem repudiandae, facilis neque ducimus maxime placeat. Minima ipsum
-                        accusamus repellat unde consequuntur eligendi tempore, mollitia omnis numquam nisi.</p>
-                    <a href="#" class="text-blue-500 mt-4 inline-block">Read more</a>
+                    <h2 class="text-xl font-semibold text-gray-800">Arsitektur Teknologi Perkembangan Ilmu Komputer IOT dan Contoh Implementasinya.</h2>
+                    <p class="text-gray-600 mt-2">Arsitektur teknologi Internet of Things (IoT) merujuk pada struktur atau susunan komponen-komponen yang diperlukan untuk menghubungkan perangkat fisik ke internet dan memungkinkan pertukaran data antara perangkat tersebut. Arsitektur ini berfungsi sebagai kerangka kerja untuk mengatur bagaimana perangkat IoT berinteraksi dan berkomunikasi satu sama lain serta dengan platform atau aplikasi yang terhubung dengannya.</p>
+                    <a href="iot.html" target="_blank" class="text-blue-500 mt-4 inline-block">Read more</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="js/scripts.js"></script>
+
+    <div class="flex justify-center items-center m-10">
+        <div class="flex flex-wrap gap-8 text-center justify-center rounded-lg kritsar">
+            <h2 class="w-full font-bold ">Kritik dan Saran</h2>
+            <div id="adminDatas" class="bg-white rounded-lg shadow-md p-4 w-72">
+                <form id="adminDatasForm">
+                    <div class="mb-4">
+                        <label for="nameInputAdmin" class="block text-gray-700">Nama:</label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pesanInput" class="block text-gray-700">Pesan:</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="js/scripts.js"></script>
 </body>
 
 </html>

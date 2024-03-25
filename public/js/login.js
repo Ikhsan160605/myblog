@@ -13,3 +13,11 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     }
   });
   
+
+  function doGet() {
+    var sheet = SpreadsheetApp.openById('AKfycbzfo80aANoAbAQsEY4CKow8SfFOoibA_Lk0VnbZ-7n8rxrrF5pc62guVF2yxRabkx46').getActiveSheet();
+    var data = sheet.getDataRange().getValues();
+    var jsonData = JSON.stringify(data);
+    return ContentService.createTextOutput(jsonData).setMimeType(ContentService.MimeType.JSON);
+  }
+  

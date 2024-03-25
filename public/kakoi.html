@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data from Google Sheets</title>
+</head>
+<body>
+  <div id="dataContainer"></div>
+
+  <script>
+    // Fungsi untuk mengambil data dari web app Google Apps Script
+    function getData() {
+      fetch('https://script.google.com/macros/s/AKfycbzfo80aANoAbAQsEY4CKow8SfFOoibA_Lk0VnbZ-7n8rxrrF5pc62guVF2yxRabkx46/exec')
+        .then(response => response.json())
+        .then(data => {
+          // Tampilkan data dalam elemen HTML
+          const dataContainer = document.getElementById('dataContainer');
+          dataContainer.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Panggil fungsi untuk mengambil data saat halaman dimuat
+    getData();
+  </script>
+</body>
+</html>

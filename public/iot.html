@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsitektur Komputer IOT</title>
+    <style>
+        body,
+        html {
+            scrollbar-width: none;
+        }
+
+        body {
+            height: 1100vh;
+        }
+
+        .awal {
+            height: 600px;
+            background-image: url("https://www.scnsoft.com/blog-pictures/internet-of-things/iot-architecture.png");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .awal:before {
+            content: '';
+            display: flex;
+            background-image: url("https://www.scnsoft.com/blog-pictures/internet-of-things/iot-architecture.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+            /* Pastikan konten berada di atas gambar */
+        }
+    </style>
+    <link rel="stylesheet" href="css/animejs.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Scribble&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="awal w-full justify-center flex items-center">
+        <div
+            class="absolute content flex justify-center items-center bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-md w-full h-64 overflow-hidden">
+            <div class="inset-0 flex items-center justify-center w-96 flex-wrap text-white">
+                <h1 class="font-system text-xl font-extrabold">Selamat datang</h1>
+                <h2 class="font-serif font-normal mt-5">Arsitektur Teknologi Perkembangan Ilmu Komputer IOT dan Contoh
+                    Implementasinya.</h2>
+                <h3 class="mt-5"> by: Muhammad Ikhsan Nurfadilah</h3>
+            </div>
+        </div>
+    </div>
+    <div class="md:m-10 container py-8">
+        <div class="text-center w-full bg-cyan-950 md:m-5 rounded-md p-10">
+                <h1 class="text-2xl font-semibold">Mengenal Sejarah Singkat Internet of Things<span class=" text-orange-400"> (IoT) </span></h1>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;Walau kini sudah menjadi umum, ternyata Internet of Things (IoT) merupakan terobosan dan inovasi teknologi yang sebenarnya cukup baru meski wacana mesin berkomunikasi satu sama lain sudah ada sejak awal 1800-an. Mesin telah menyediakan komunikasi langsung sejak telegraf dan telepon rumah pertama yang dikembangkan pada tahun 1830-an dan 1840-an. Digambarkan sebagai telegrafi nirkabel, transmisi suara radio pertama terjadi pada 3 Juni 1900, alat ini menyediakan komponen lain yang diperlukan untuk mengembangkan Internet of Things.</p>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;Dari kemajuan ini maka dapat disimpulkan bahwa perkembangan komputer dimulai pada tahun 1950-an. Internet yang merupakan komponen penting untuk dapat mengoperasikan IoT sendiri dimulai sebagai bagian dari DARPA (Defense Advanced Research Projects Agency) pada tahun 1962 lalu berkembang menjadi ARPANET pada tahun 1969. Pada tahun 1980-an, penyedia layanan komersial mulai mendukung penggunaan ARPANET untuk publik, memungkinkannya untuk berkembang menjadi internet modern yang dikenal dunia saat ini.</p>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;Kemudian kemajuan teknologi berkembang dengan munculnya Global Positioning Satellites (GPS) pada awal 1993 yang dioperasikan departemen dari Amerika Serikat. Dari satelite milik pemerintah maka berkembang lagi untuk kegunaan komersial yang menyediakan komunikasi dasar untuk sebagian besar IoT.</p>
+            </div>
+        <hr class="md:w-full md:h-1 md:bg-white mb-8">
+        <div class="flex flex-wrap items-center justify-center">
+            <div class="text-center w-[500px] bg-cyan-950 m-5 rounded-md p-10">
+                <h1 class="text-2xl font-semibold">Apa itu <span class=" text-orange-400">IOT</span> ??</h1>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;IoT merupakan kepanjangan dari Internet of
+                    Things. IoT merupakan suatu konsep komputasi yang memanfaatkan fasilitas koneksi internet untuk
+                    melakukan transfer data tanpa harus melakukan interaksi langsung dari user ke user atau dari user ke
+                    perangkat.</p>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;IoT dapat mempermudah dalam melakukan
+                    pekerjaan bagi user secara real time dengan kontrol jarak jauh tanpa harus berinteraksi secara
+                    langsung. Arsitektur dalam konteks Internet of Things menjelaskan mengenai komponen lembar kerja,
+                    fungsi dan pengaturan serta prosedur operasional dari data yang digunakan.</p>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;Dalam arsitektur IoT terdapat tiga elemen
+                    utama yakni barang fisik, perangkat koneksi ke internet, dan cloud data center. Barang fisik berupa
+                    model IoT, perangkat koneksi ke internet berupa modem dan router, serta tempat penyimpanan aplikasi
+                    berbasis cloud.</p>
+            </div>
+            <hr class="md:h-[600px] w-36 md:w-1 bg-white mb-8">
+            <div class="text-center w-[500px] bg-cyan-950 m-5 rounded-md p-10">
+                <h1 class="text-2xl font-semibold">Layer Arsitektur <span class=" text-orange-400">IOT</span></h1>
+                <br>
+                <img class="w-96" src="https://dosenit.com/wp-content/uploads/2023/04/layer-arsitektur-IoT.webp" alt="">
+                <br>
+                <br>
+                <p class="text-red-200 font-normal text-justify">Arsitektur IoT memiliki tiga layer yang dijadikan
+                    sebagai dasar konsep, antara lain perception, network, dan application. Berikut penjelasan ketiga
+                    layer arsitektur IoT.</p>
+            </div>
+        </div>
+        <div class="flex justify-center items-center">
+            <hr class="md:w-full md:block w-1 h-10 md:h-1 bg-white mb-8">
+        </div>
+        <div class="md:flex md:flex-wrap md:gap-96 md:justify-center">
+            <hr class="hidden md:block md:h-[100px] w-36 md:w-1 bg-white mb-8">
+            <hr class="hidden md:block md:h-[100px] w-36 md:w-1 bg-white mb-8">
+            <hr class="hidden md:block md:h-[100px] w-36 md:w-1 bg-white mb-8">
+        </div>
+
+        <div class="flex flex-wrap w-full">
+            <div class="text-center w-[380px] bg-cyan-950 m-5 rounded-md p-10">
+                <h1 class="text-2xl font-semibold">1. Perception</h1>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;Perception merupakan layer pertama dalam
+                    arsitektur IoT yang membahas mengenai komponen fisik dalam arsitektur. Contoh komponen tersebut
+                    adalah sensor, aktuator, atau perangkat apapun yang bersentuhan dengan lingkungan.</p>
+                <br>
+                <p class="text-red-200 font-normal text-justify">Hal tersebut bertujuan agar perangkat dalam
+                    mengumpulkan semua informasi yang diperlukan dalam mendukung proyek yang sedang berjalan.</p>
+
+            </div>
+            <div class="text-center w-[380px] bg-cyan-950 m-5 md:h-80 rounded-md p-10">
+                <h1 class="text-2xl font-semibold">2. Network</h1>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;Layer arsitektur IoT selanjutnya adalah
+                    network. Network merupakan suatu proses pengolahan berdasarkan pada data yang sudah terkumpul. Layer
+                    network ini terhubung dengan beragam perangkat dan bertujuan untuk menjaga distribusi keseluruhan
+                    data.</p>
+
+            </div>
+            <div class="text-center w-[380px] bg-cyan-950 m-5 md:h-80 rounded-md p-10">
+                <h1 class="text-2xl font-semibold">3. Application</h1>
+                <br>
+                <p class="text-red-200 font-normal text-justify">&nbsp;&nbsp;Application menjadi layer arsitektur yang
+                    terakhir. Layer ini dapat digunakan untuk berinteraksi dengan user. Contoh penerapan layer
+                    application yaitu pada saat menekan tombol untuk mengoperasikan benda elektronik pada smart device.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap justify-center items-center bg-gray-100 p-0">
+        <div class="bg-gray-100 flex flex-col justify-center items-center">
+            <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                <h1 class="text-3xl font-extrabold mb-4 text-black">Arsitektur IoT</h1>
+                <div class="border-b-2 border-gray-200 mb-6"></div>
+                <img src="https://dosenit.com/wp-content/uploads/2023/04/arsitektur-IoT.webp" alt="">
+                <div class="border-b-2 border-gray-200 mb-6"></div>
+                <h4 class=" text-lg font-extrabold mb-4 text-black">Dalam IoT terdiri dari beberapa bagian yang menjadi arsitektur penyusun, diantaranya sebagai berikut:
+                </h4>
+            </div>
+        </div>  
+        <div class="flex flex-wrap justify-center items-center w-full m-10">
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">1. Things</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Things adalah objek yang dilengkapi dengan sensor yang dapat mengumpulkan data yang akan ditransfer melalui jaringan internet atau aktuator yang dapat mendorong sesuatu untuk bertindak, misalnya mengurangi kecepatan mesin.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">2. Gateways</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Gateways merupakan fasilitas yang menyediakan konektivitas antara bagian cloud dari solusi IoT yang dapat mendukung proses dan penyaringan data sebelum dipindahkan ke cloud, kemudian menjalankan perintah melalui aktuator.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">3. Cloud Gateways</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Cloud gateways dapat memberikan layanan kompresi data dan transmisi data yang aman antara gateway bidang dan server cloud IoT, serta memastikan kompatibilitas dengan berbagai protokol pada saat berkomunikasi dengan gateways lapangan.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">4. Streaming Data Processor</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Streaming data processor berguna untuk memastikan transisi input data yang efektif ke penyimpanan data dan aplikasi kontrol sehingga dapat dipastikan tidak ada data yang dapat hilang ataupun rusak.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">5. Data Lake</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Data lake adalah suatu tempat yang digunakan untuk menyimpan data yang diperoleh dari perangkat yang terhubung dalam format alami. Melalui aliran data besar dapat dikumpulkan menjadi satu tempat.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">6. Big Data Warehouse</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Big data warehouse merupakan data yang disaring dan diproses untuk keperluan wawasan atau melakukan ekstraksi dari sumber data ke tempat penyimpanan data besar.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">7. Data Analytics</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Data analytic merupakan proses menganalisa data besar untuk mengetahui kinerja perangkat, mengidentifikasi inefisiensi, dan mencari strategi dalam meningkatkan sistem IoT. Hasilnya dapat berkontribusi pada keberlanjutan pembuatan algoritma untuk aplikasi kontrol.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">8. Machine Learning and The Models ML Generates</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">Machine learning and the models ML generates dapat menjadi peluang untuk membuat model yang lebih efisien untuk aplikasi kontrol. Model diperbarui secara berkala berdasarkan akumulasi data historis.</h4>
+                </div>
+            </div>  
+            <div class="bg-gray-100 flex flex-col justify-center m-5 items-center">
+                <div class="max-w-lg bg-white shadow-md rounded-md p-8">
+                    <h4 class=" text-sm font-extrabold mb-4 text-black">9. User Application</h4>
+                    <h4 class=" text-sm font-normal mb-4 text-black">User applications merupakan komponen perangkat lunak dari sistem IoT yang menghubungkan pengguna dengan sistem IoT dan memberikan opsi untuk mengendalikan sistem pusat seperti aplikasi.</h4>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="flex flex-wrap text-center justify-center m-10">
+        <h1 class="text-xl font-semibold">Fungsi dan Manfaat lainnya dalam kehidupan MODERN.</h1>
+        <hr class="md:w-full md:block w-1 h-10 md:h-1 md:mt-10 bg-white mb-8">
+        <div class="flex flex-wrap columns-3 gap-[100px]">
+            <hr class="hidden md:block md:h-[1000px] w-36 md:w-1 bg-white mb-8">
+            <div class="md:w-[900px] text-justify h-96">
+                <h1 class=" text-2xl text-orange-300">Manfaat bagi kehidupan sehari-hari</h1>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Internet of Things menjanjikan banyak perubahan positif di bidan kesehatan dan keselamatan, operasi bisnis, industri, lingkungan, dan lain-lain secara global.</p>
+                <p>Internet of Things atau IoT membawa banyak manfaat penting dalam kehidupan. Berikut sejumlah manfaat Internet of Things dan penjelasannya:</p>
+                <br>
+                <ol style="list-style-type: decimal;">
+                    <li> Utilisasi aset</li>
+                    <p>&nbsp;&nbsp;IoT dapat berkontribusi dalam mengonfirmasi kondisi, performa, kualitas dan penggunaan setiap peralatan dan perlengkapan. Dengan demikian pengguna dapat memfokuskan sumber daya pada perbaikan tujuan untuk meningkatkan kualitas peralatan secara umum.</p>
+                    <br>
+                    <li> Efisiensi proses</li>
+                    <p>&nbsp;&nbsp;Konektifitas perlatan satu sama lain otomatis akan membuat sistem untuk bekerja lebih efektif dan efisien. Dari sisi pabrikan, IoT dapat dimanfaatkan untuk secara signifikan meningkatkan efisiensi, mengurangi cacat produksi, dan meningkatkan kepuasan pelanggan.</p>
+                    <p>Efesiensi juga datang dari sisi deteksi dini kerusakan peralatan yang mungkin terjadi di kemudian hari. Ini dapat mengoptimalkan sumber daya yang ada.</p>
+                    <br>
+                    <li>Peningkatan produktivitas</li>
+                    <p>&nbsp;&nbsp;Di bidang keamanan, IoT bisa dimanfaatkan untuk melakukan pemantauan perbatasan, keamanan publik, sistem peringatan dini bencana, sistem penerangan jalan raya, sistem keamanan rumah, peringatan kebakaran, dan masih banyak lagi.</p>
+                    <br>
+                    <li> Peningkatan keamanan</li>
+                    <p>&nbsp;&nbsp;Sistem kontrol akses dalam IoT dapat membuat petugas yang berkepentingan mudah memantau aktivitas karyawan. Ini sekaligus mempermudah melakukan inspeksi terhadap jadwal kehadiran, waktu lembur, dan seterusnya. Semuanya dapat diakses secara real-time.</p>
+                    <p>Untuk pergudangan, data yang diperoleh misalnya dapat dimanfaatkan untuk analisa jalur robot tersibuk, sehingga dapat digunakan untuk membangun desain lintasan robot yang lebih baik.</p>
+                    <br>
+                    <li> Pengurangan Biaya</li>
+                    <p>&nbsp;&nbsp;Tahapan yang lebih singkat dalam birokrasi suatu perusahaan atau pemerintahan dapat memotong biaya yang sebelumnya digunakan. Hal ini karena manajemen yang ada dapat dikurangi berujung dengan berkurangnya juga biaya yang harus dikeluarkan.</p>
+                    <br>
+                    <li> Peluang bisnis baru</li>
+                    <p>&nbsp;&nbsp;Hadirnya IoT menghadirkan peluang bisnis baru berbasis teknologi yang didukung oleh basis data realtime, sejarah data terdahulu, dan dikombinasikan dengan data lain yang saling berpengaruh.</p>
+                </ol>
+            </div>
+            <hr class="hidden md:block md:h-[1000px] w-36 md:w-1 bg-white mb-8">
+        </div>
+        <div class="flex flex-wrap columns-3 gap-[100px] mt-[1500px] md:mt-0">
+            <hr class="hidden md:block md:h-[1100px] w-36 md:w-1 bg-white mb-8">
+            <div class="md:w-[900px] text-justify h-96">
+                <h1 class=" text-2xl text-orange-300">Fungsi bagi kehidupan sehari-hari</h1>
+                <br>Internet of Things (IoT) memiliki banyak fungsi dalam kehidupan sehari-hari yang telah membantu memperbaiki efisiensi, kenyamanan, dan keamanan di berbagai bidang. Berikut adalah beberapa contoh fungsi IoT dalam kehidupan sehari-hari.</p>
+                <p>Internet of Things atau IoT membawa banyak manfaat penting dalam kehidupan. Berikut sejumlah manfaat Internet of Things dan penjelasannya:</p>
+                <br>
+                <ol style="list-style-type: decimal;">
+                    <li> Rumah Pintar (Smart Home)</li>
+                    <p>&nbsp;&nbsp;IoT memungkinkan integrasi perangkat elektronik di rumah untuk dikendalikan secara otomatis atau jarak jauh melalui perangkat mobile. Contohnya, lampu yang dapat diatur secara otomatis berdasarkan jadwal atau sensor gerak, thermostat yang dapat diatur dari jauh untuk mengatur suhu rumah, dan kunci pintu pintar yang dapat diaktifkan atau dinonaktifkan dari jarak jauh.</p>
+                    <br>
+                    <li> Kesehatan dan Kebugaran</li>
+                    <p>&nbsp;&nbsp; IoT digunakan dalam perangkat pelacak kebugaran seperti smartwatch atau perangkat pelacak aktivitas yang dapat memantau detak jantung, jumlah langkah, dan kualitas tidur. Data ini dapat membantu pengguna untuk mengelola kesehatan mereka dengan lebih baik.</p>
+                    <br>
+                    <li>Transportasi Cerdas</li>
+                    <p>&nbsp;&nbsp;IoT digunakan dalam sistem transportasi cerdas untuk memantau lalu lintas, mengelola parkir, dan mengoptimalkan rute perjalanan. Contohnya, kendaraan yang terhubung dapat memberikan informasi tentang kondisi lalu lintas secara real-time dan memberikan rute alternatif.</p>
+                    <br>
+                    <li> Manufaktur dan Industri</li>
+                    <p>&nbsp;&nbsp; IoT digunakan dalam lingkungan manufaktur untuk memantau dan mengelola rantai pasokan, memprediksi pemeliharaan peralatan, dan meningkatkan efisiensi produksi. Sensor yang dipasang pada peralatan dapat mengirimkan data tentang kinerja dan kondisi peralatan secara real-time.</p>
+                    <br>
+                    <li>Pertanian Pintar</li>
+                    <p>&nbsp;&nbsp;IoT digunakan dalam pertanian untuk memantau tanaman dan hewan, mengoptimalkan penggunaan air dan pupuk, dan mengelola sistem irigasi secara otomatis. Sensor tanah dan cuaca dapat memberikan informasi tentang kondisi pertanian kepada petani.</p>
+                    <br>
+                    <li> Energi yang Efisien</li>
+                    <p>&nbsp;&nbsp; IoT dapat digunakan untuk mengelola penggunaan energi secara efisien dengan memantau dan mengatur konsumsi energi di rumah, gedung, atau fasilitas industri. Ini dapat membantu mengurangi biaya energi dan dampak lingkungan.</p>
+                    <br>
+                    <li> Keamanan dan Pemantauan</li>
+                    <p>&nbsp;&nbsp; IoT digunakan dalam sistem keamanan untuk memantau rumah, bisnis, atau wilayah publik. Kamera keamanan dan sensor gerak dapat memberikan pemilik atau petugas keamanan informasi tentang aktivitas yang mencurigakan.</p>
+                    <br>
+                    <li> Perangkat Keseharian</li>
+                    <p>&nbsp;&nbsp; Banyak perangkat sehari-hari, seperti mesin cuci, kulkas, dan oven, kini dilengkapi dengan konektivitas IoT. Hal ini memungkinkan pengguna untuk mengontrol dan mengelola perangkat ini dari jarak jauh atau mendapatkan pembaruan status melalui aplikasi mobile.</p>
+                </ol>
+            </div>
+            <hr class="hidden md:block md:h-[1100px] w-36 md:w-1 bg-white mb-8">
+        </div>
+    </div>
+
+</body>
+
+</html>
